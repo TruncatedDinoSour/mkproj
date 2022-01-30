@@ -1,0 +1,52 @@
+.TH MKPROJ "1" "January 2022" "Mkproj" "General Commands Manual"
+
+
+.SH NAME
+
+mkproj \- make and use templates for projects
+
+
+.SH SYNOPSIS
+
+.B mkproj
+[\fI\,TEMPLATE_NAME\/\fR]
+
+
+.SH "CONFIG FILE"
+
+Templates can be made and viewed in \fI~/.config/proj_tmpl\fR directory with a structure of
+
+template_name/
+    mkproj_autorun      -- A script that will run after initialising the template
+    file1
+    dir1/
+        something
+
+\fImkproj_autorun\fR is a special file that will get auto-ran on project creation,
+keep in mind that \fBhaving it is optional\fR
+
+In \fImkproj_autorun\fR can go any shellscript, for example:
+
+.TP
+git init
+
+This will init git on project creation if put into \fImkproj_autorun\fR
+
+.TP
+And everything else you can make normal, it will get put into the project normally
+
+
+.SH EXAMPLES
+
+See https://ari-web.xyz/dotfile/gentoo/dotfiles/config/proj_tmpl
+
+
+.SH AUTHOR
+
+Written by Ari Archer <ari@mail.ari-web.xyz>
+
+
+.SH "REPORTING BUGS"
+
+Report any bugs or feature requests to https://ari-web.xyz/gh/mkproj issues
+
